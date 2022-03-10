@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Models\Post;
 
 /*
 |--------------------------------------------------------------------------
@@ -12,13 +13,24 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-Route::get('/', function () {
-    return view('welcome');
+Route::group(['guest'], function (){
+    Route::get('/', function () {
+        return view('posts', [
+            'posts' => Post::latest()->get(),
+        ]);
+    })->name('home');
+    Route::get('/post/{post:slug}', function (Post $post) {
+        return view('post', [
+            'post' => $post,
+            'author' => $post->author,
+        ]);
+    })->name('post');
 });
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth'])->name('dashboard');
+Route::middleware(['auth'])->group(function () {
+    Route::get('/dashboard', function () {
+        return view('dashboard');
+    })->name('dashboard');
+});
 
 require __DIR__.'/auth.php';
