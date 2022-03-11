@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Models\Post;
+use App\Models\User;
+use App\Http\Controllers\PostController;
 
 /*
 |--------------------------------------------------------------------------
@@ -29,8 +31,17 @@ Route::group(['guest'], function (){
 
 Route::middleware(['auth'])->group(function () {
     Route::get('/dashboard', function () {
-        return view('dashboard');
+        return view('admin.dashboard')->with([
+            'posts' => Post::latest()->get(),
+            'users' => User::latest()->get(),
+        ]);
     })->name('dashboard');
+    
+    // Post routes
+    Route::get('/admin/create-post', [PostController::class, 'createPost'])->name('create-post');
+    Route::post('/admin/save-post', [PostController::class, 'savePost'])->name('save-post');
+    Route::get('/admin/edit-post/{post:slug}', [PostController::class, 'editPost'])->name('edit-post');
+    Route::post('/admin/update-post', [PostController::class, 'updatePost'])->name('update-post');
 });
 
 require __DIR__.'/auth.php';
