@@ -32,6 +32,7 @@ Route::group(['guest'], function (){
 Route::middleware(['auth'])->group(function () {
     Route::get('/dashboard', function () {
         return view('admin.dashboard')->with([
+            // 'posts' => Post::where('user_id', '=', Auth::user()->id)->latest()->get(),
             'posts' => Post::latest()->get(),
             'users' => User::latest()->get(),
         ]);

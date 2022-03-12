@@ -28,12 +28,11 @@
         <div class="my-4">
             <label for="summernote">
                 <h5>Body</h5>
-                <!-- <input id="body" class="block mt-1 w-full" type="text" name="body" value="{{old('body')}}" required autofocus /> -->
                 <textarea id="summernote" name="body">{{old('body')}}</textarea>
                 <script>
                   $('#summernote').summernote({
                     tabsize: 2,
-                    height: 100
+                    height: 400
                   });
                 </script>
             </label>

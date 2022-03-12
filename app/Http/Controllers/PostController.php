@@ -35,7 +35,21 @@ class PostController extends Controller
         return view('admin.editPost')->withPost($post);
     }
 
-    public function updatePost() {
+    public function updatePost(Request $request) {
+        $request->validate([
+            'title' => ['required', 'string', 'max:255'],
+            'excerpt' => ['required', 'string', 'max:255'],
+            'body' => ['required', 'string'],
+        ]);
 
+        $post = Post::find($request->post_id);
+
+        $post->title = $request->title;
+        $post->excerpt = $request->excerpt;
+        $post->body = $request->body;
+
+        $post->update();
+
+        return redirect('/dashboard')->with('status', 'Post has been updated successfully');
     }
 }
