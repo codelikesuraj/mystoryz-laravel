@@ -37,6 +37,18 @@
             </label>
         </div>
 
-        <button type="submit">Update</button>
+        <!-- visibility -->
+        <div class="my-4">
+            <h5>Visibility</h5>
+            <label for="v-public">
+                <input id="v-public" type="radio" name="visibility" value="public"> Published
+            </label>&nbsp;&nbsp;
+            <label for="v-hidden">
+                <input id="v-hidden" type="radio" name="visibility" value="hidden" checked> Hidden
+            </label>
+        </div>
+
+        <!-- submit -->
+        <button class="btn btn-success" type="submit">Update</button>
     </form>
 </x-admin>

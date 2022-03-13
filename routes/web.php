@@ -18,7 +18,7 @@ use App\Http\Controllers\PostController;
 Route::group(['guest'], function (){
     Route::get('/', function () {
         return view('posts', [
-            'posts' => Post::latest()->get(),
+            'posts' => Post::where('visibility', '=', 'public')->latest()->get(),
         ]);
     })->name('home');
     Route::get('/post/{post:slug}', function (Post $post) {
@@ -30,9 +30,11 @@ Route::group(['guest'], function (){
 });
 
 Route::middleware(['auth'])->group(function () {
+    Route::get('/admin', function () {
+        return redirect('/dashboard');
+    })->name('admin');
     Route::get('/dashboard', function () {
         return view('admin.dashboard')->with([
-            // 'posts' => Post::where('user_id', '=', Auth::user()->id)->latest()->get(),
             'posts' => Post::latest()->get(),
             'users' => User::latest()->get(),
         ]);
@@ -43,6 +45,7 @@ Route::middleware(['auth'])->group(function () {
     Route::post('/admin/save-post', [PostController::class, 'savePost'])->name('save-post');
     Route::get('/admin/edit-post/{post:slug}', [PostController::class, 'editPost'])->name('edit-post');
     Route::post('/admin/update-post', [PostController::class, 'updatePost'])->name('update-post');
+    Route::post('/admin/delete-post', [PostController::class, 'deletePost'])->name('delete-post');
 });
 
 require __DIR__.'/auth.php';

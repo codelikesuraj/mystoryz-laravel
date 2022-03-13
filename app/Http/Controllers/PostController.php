@@ -17,12 +17,14 @@ class PostController extends Controller
             'title' => ['required', 'string', 'max:255'],
             'excerpt' => ['required', 'string', 'max:255'],
             'body' => ['required', 'string'],
+            'visibility' => ['required', 'string'],
         ]);
 
         $post = Post::create([
             'title' => $request->title,
             'excerpt' => $request->excerpt,
             'body' => $request->body,
+            'visibility' => $request->visibility,
             'user_id' => Auth::user()->id,
         ]);
 
@@ -40,6 +42,7 @@ class PostController extends Controller
             'title' => ['required', 'string', 'max:255'],
             'excerpt' => ['required', 'string', 'max:255'],
             'body' => ['required', 'string'],
+            'visibility' => ['required', 'string'],
         ]);
 
         $post = Post::find($request->post_id);
@@ -47,9 +50,22 @@ class PostController extends Controller
         $post->title = $request->title;
         $post->excerpt = $request->excerpt;
         $post->body = $request->body;
+        $post->visibility = $request->visibility;
 
         $post->update();
 
         return redirect('/dashboard')->with('status', 'Post has been updated successfully');
+    }
+
+    public function deletePost(Request $request) {
+        $request->validate([
+            'slug' => ['required', 'string']
+        ]);
+
+        $post = Post::where('slug', '=', $request->slug)->first();
+
+        $post->delete();
+
+        return redirect('/dashboard')->with('status', 'Post has been deleted successfully');
     }
 }

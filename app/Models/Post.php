@@ -19,6 +19,7 @@ class Post extends Model
         'excerpt',
         'body',
         'user_id',
+        'visibility',
     ];
 
     public function author () {
