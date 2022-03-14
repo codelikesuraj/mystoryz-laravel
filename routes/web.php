@@ -33,10 +33,10 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/admin', function () {
         return redirect('/dashboard');
     })->name('admin');
+
     Route::get('/dashboard', function () {
         return view('admin.dashboard')->with([
-            'posts' => Post::latest()->get(),
-            'users' => User::latest()->get(),
+            'posts' => Post::where('user_id', '=', Auth::user()->id)->latest()->get(),
         ]);
     })->name('dashboard');
     

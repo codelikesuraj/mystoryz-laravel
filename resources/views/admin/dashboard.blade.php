@@ -1,4 +1,5 @@
 <x-admin>
+    <x-slot name="head"></x-slot>
     <x-slot name="title">Admin</x-slot>
         
     <h1>Dashboard</h1>
@@ -13,7 +14,7 @@
         <table id="datatablesSimple">
             <thead>
                 <tr>
-                    <th>ID</th>
+                    <th>S/N</th>
                     <th>Title</th>
                     <th>Status</th>
                     <th>Author</th>
@@ -24,7 +25,7 @@
             </thead>
             <tfoot>
                 <tr>
-                    <th>ID</th>
+                    <th>S/N</th>
                     <th>Title</th>
                     <th>Status</th>
                     <th>Author</th>
@@ -36,7 +37,7 @@
             <tbody>
                 @foreach($posts as $post)
                     <tr>
-                        <td>{{$post->id}}</td>
+                        <td>{{$loop->iteration}}</td>
                         <td>{{$post->title}}</td>
                         <td>{{ucfirst($post->visibility)}}</td>
                         <td>{{ucwords($post->author->firstName.' '.$post->author->lastName)}}</td>

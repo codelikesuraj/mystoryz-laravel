@@ -15,7 +15,7 @@ class PostController extends Controller
     public function savePost(Request $request) {
         $request->validate([
             'title' => ['required', 'string', 'max:255'],
-            'excerpt' => ['required', 'string', 'max:255'],
+            'excerpt' => ['required', 'string', 'max:512'],
             'body' => ['required', 'string'],
             'visibility' => ['required', 'string'],
         ]);
@@ -40,7 +40,7 @@ class PostController extends Controller
     public function updatePost(Request $request) {
         $request->validate([
             'title' => ['required', 'string', 'max:255'],
-            'excerpt' => ['required', 'string', 'max:255'],
+            'excerpt' => ['required', 'string', 'max:512'],
             'body' => ['required', 'string'],
             'visibility' => ['required', 'string'],
         ]);
