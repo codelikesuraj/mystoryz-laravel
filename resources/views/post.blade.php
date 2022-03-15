@@ -13,7 +13,7 @@
                             <h1 class="fw-bolder mb-1">{{$post->title}}</h1>
                             <!-- Post meta content-->
                             <div class="small text-muted my-2">
-                            	Posted {{$post->created_at->diffForHumans()}} by 
+                            	Published {{$post->created_at->diffForHumans()}} by 
                             	{{ ucwords($author->firstName.' '.$author->lastName) }}
                             </div>
                         </header>
