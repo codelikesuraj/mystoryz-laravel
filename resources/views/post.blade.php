@@ -12,7 +12,7 @@
                             <!-- Post title-->
                             <h1 class="fw-bolder mb-1">{{$post->title}}</h1>
                             <!-- Post meta content-->
-                            <div class="text-muted fst-italic mb-2">
+                            <div class="small text-muted my-2">
                             	Posted {{$post->created_at->diffForHumans()}} by 
                             	{{ ucwords($author->firstName.' '.$author->lastName) }}
                             </div>
@@ -28,10 +28,10 @@
                 
                 <!-- Side widgets-->
                 <div class="col-lg-4">
-                    <!-- Side widget-->
+                    <!-- Ad Space-->
                     <div class="card mb-4">
-                        <div class="card-header">Side Widget</div>
-                        <div class="card-body">You can put anything you want inside of these side widgets. They are easy to use, and feature the Bootstrap 5 card component!</div>
+                        <div class="card-header">Ad Space</div>
+                        <div class="card-body">You can put anything you want inside of these space. They are meant for possible ads and   other contents for the website</div>
                     </div>
                 </div>
             </div>

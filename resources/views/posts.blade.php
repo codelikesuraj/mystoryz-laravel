@@ -15,9 +15,9 @@
 		        <div class="card mb-4">
 		            <a href="#!"><img class="card-img-top" src="https://dummyimage.com/850x350/dee2e6/6c757d.jpg" alt="..." /></a>
 		            <div class="card-body">
-		                <div class="small text-muted">{{ $posts[0]->created_at->diffForHumans() }}</div>
+		                <div class="small text-muted">Published {{ $posts[0]->created_at->diffForHumans() }}</div>
 		                <h2 class="card-title">{{ $posts[0]->title }}</h2>
-		                <p class="card-text">{!! $posts[0]->excerpt !!}</p>
+		                <p class="fs-6 card-text">{!! $posts[0]->excerpt !!}</p>
 		                <a class="btn btn-primary" href="{{route('post', ['post'=>$posts[0]->slug])}}">Read more →</a>
 		            </div>
 		        </div>
@@ -33,7 +33,7 @@
 		                <div class="card-body">
 		                  <div class="small text-muted">{{$post->created_at->diffForHumans()}}</div>
 		                  <h2 class="card-title h4">{{$post->title}}</h2>
-		                  <p class="card-text">{{ $post->excerpt }}</p>
+		                  <p class="fs-6 card-text">{{ $post->excerpt }}</p>
 		                  <a class="btn btn-primary" href="{{route('post', ['post'=>$post->slug])}}">Read more →</a>
 		                </div>
 		              </div>
@@ -46,10 +46,10 @@
       
       <!-- Side widgets-->
       <div class="col-lg-4">
-          <!-- Side widget-->
+          <!-- Ad space-->
           <div class="card mb-4">
-              <div class="card-header">Side Widget</div>
-              <div class="card-body">You can put anything you want inside of these side widgets. They are easy to use, and feature the Bootstrap 5 card component!</div>
+              <div class="card-header">Ad Space</div>
+              <div class="card-body">You can put anything you want inside of these space. They are meant for possible ads and other contents for the website</div>
           </div>
       </div>
     </div>
