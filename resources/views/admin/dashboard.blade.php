@@ -11,7 +11,7 @@
         <div class="card-header">
             <span class="fs-4"><i class="fas fa-table me-1"></i> <strong>POSTS</strong></span>
         </div>
-        <table id="datatablesSimple">
+        <table id="datatablesPosts">
             <thead>
                 <tr>
                     <th>S/N</th>
@@ -77,6 +77,43 @@
                     </div>
                 @endforeach
                 
+            </tbody>
+        </table>
+    </div>
+
+    <div class="card my-4" id="users">
+        <div class="card-header">
+            <span class="fs-4"><i class="fas fa-user me-1"></i> <strong>USERS</strong></span>
+        </div>
+        <table id="datatablesUsers">
+            <thead>
+                <tr>
+                    <th>S/N</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Role</th>
+                    <th>Created</th>
+                </tr>
+            </thead>
+            <tfoot>
+                <tr>
+                    <th>S/N</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Role</th>
+                    <th>Created</th>
+                </tr>
+            </tfoot>
+            <tbody>
+                @foreach($users as $user)
+                    <tr>
+                        <td>{{$loop->iteration}}</td>
+                        <td>{{ucwords($user->firstName.' '.$user->lastName)}}</td>
+                        <td>{{$user->email}}</td>
+                        <td>{{ucfirst($user->role)}}</td>
+                        <td>{{$user->created_at}}</td>
+                    </tr>
+                @endforeach
             </tbody>
         </table>
     </div>

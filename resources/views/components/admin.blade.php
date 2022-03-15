@@ -21,10 +21,6 @@
     <script src="js/template/datatables-simple-demo.js"></script>
 
     {{ $head }}
-
-    <!-- summernote stuffs -->
-    
-    <!-- summernote stuffs -->
     
 </head>
 <body class="sb-nav-fixed">
@@ -69,10 +65,15 @@
                             <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                             Dashboard
                         </a>
-                        <div class="sb-sidenav-menu-heading">Posts</div>
+                        @if(Auth::user()->role == 'admin')
+                            <a class="nav-link" href="{{Route::currentRouteName()=='dashboard'?'':route('dashboard')}}#users">
+                                <div class="sb-nav-link-icon"><i class="fas fa-user-alt"></i></div>
+                                View Users
+                            </a>
+                        @endif
                         <a class="nav-link" href="{{route('create-post')}}">
-                            <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
-                            Create
+                            <div class="sb-nav-link-icon"><i class="fas fa-pencil-alt"></i></div>
+                            Create Post
                         </a>
                     </div>
                 </div>

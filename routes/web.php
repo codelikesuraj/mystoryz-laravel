@@ -35,8 +35,15 @@ Route::middleware(['auth'])->group(function () {
     })->name('admin');
 
     Route::get('/dashboard', function () {
+        if(Auth::user()->role == 'admin'):
+            $posts = Post::latest()->get();
+        else:
+            $posts = Post::where('user_id', '=', Auth::user()->id)->latest()->get();
+        endif;
+
         return view('admin.dashboard')->with([
-            'posts' => Post::where('user_id', '=', Auth::user()->id)->latest()->get(),
+            'posts' => $posts,
+            'users' => User::latest()->get(),
         ]);
     })->name('dashboard');
     
