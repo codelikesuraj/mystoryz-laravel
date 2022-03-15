@@ -58,6 +58,7 @@
             </li>
         </ul>
     </nav>
+
     <div id="layoutSidenav">
         <div id="layoutSidenav_nav">
             <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
@@ -84,6 +85,10 @@
         <div id="layoutSidenav_content">
             <main>
                 <div class="container-fluid px-4">
+
+                    <!-- Under construction header -->
+                    @include('layouts.under-construction')
+                    
                     {{ $slot }}
                 </div>
             </main>

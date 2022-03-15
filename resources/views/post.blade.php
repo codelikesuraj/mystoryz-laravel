@@ -1,6 +1,9 @@
 <x-public>
 	<x-slot name="title">Home</x-slot>
 	
+    <!-- Under construction header -->
+    @include('layouts.under-construction')
+    
     <!-- Page content-->
         <div class="container mt-5">
             <div class="row">

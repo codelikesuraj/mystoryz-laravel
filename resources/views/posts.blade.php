@@ -1,6 +1,9 @@
 <x-public>
 	<x-slot name="title">Home</x-slot>
 
+	<!-- Under construction header -->
+	@include('layouts.under-construction')
+	
 	<!-- Page header with logo and tagline-->
   @include('layouts.public-header')
 
