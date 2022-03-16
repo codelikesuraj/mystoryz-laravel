@@ -1,5 +1,6 @@
 <x-public>
 	<x-slot name="title">{{$post->title}}</x-slot>
+    <x-slot name="description">{{$post->excerpt}}</x-slot>
 	
     <!-- Under construction header -->
     @include('layouts.under-construction')
