@@ -1,5 +1,5 @@
 <x-public>
-	<x-slot name="title">Home</x-slot>
+	<x-slot name="title">{{$post->title}}</x-slot>
 	
     <!-- Under construction header -->
     @include('layouts.under-construction')
