@@ -32,11 +32,8 @@
                 
                 <!-- Side widgets-->
                 <div class="col-lg-4">
-                    <!-- Ad Space-->
-                    <div class="card mb-4">
-                        <div class="card-header">Ad Space</div>
-                        <div class="card-body">You can put anything you want inside of these space. They are meant for possible ads and   other contents for the website</div>
-                    </div>
+                    <!-- Most recent posts-->
+                    <x-recent-post :posts="$recent_posts"/>
                 </div>
             </div>
         </div>

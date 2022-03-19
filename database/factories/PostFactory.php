@@ -23,6 +23,7 @@ class PostFactory extends Factory
             'slug' => $this->faker->slug(),
             'excerpt' => $this->faker->paragraph(),
             'body' => '<p>'.implode('</p><p>', $this->faker->paragraphs(12)).'</p>',
+            'visibility' => 'public',
         ];
     }
 }
