@@ -8,7 +8,7 @@
         <ul class="list-unstyled mb-0">
           @foreach($posts as $post)
             <li class="my-2">
-              <a href="{{route('post', ['post'=>$post->slug])}}">
+              <a class="fs-6 fw-bold" href="{{route('post', ['post'=>$post->slug])}}">
                 {{$post->title}}
               </a>
             </li>
