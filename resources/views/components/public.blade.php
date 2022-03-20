@@ -7,6 +7,15 @@
     <meta name="author" content="" />
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
+    <!-- OG Meta Tags to improve the way the post looks when you share the page on Facebook, Twitter, LinkedIn -->
+    <meta property="og:site_name" content="{{config('app.name', 'MyStoryz')}}" /> <!-- website name -->
+    <meta property="og:site" content="https://mystoryz.herokuapp.com" /> <!-- website link -->
+    <meta property="og:title" content="{{$title}}"/> <!-- title shown in the actual shared post -->
+    <meta property="og:description" content="{{$description}}" /> <!-- description shown in the actual shared post -->
+    <meta property="og:image" content="" /> <!-- image link, make sure it's jpg -->
+    <meta property="og:url" content="" /> <!-- where do you want your post to link to -->
+    <meta name="twitter:card" content="summary_large_image"> <!-- to have large image post format in Twitter -->
+
     <title>{{ $title }}</title>
 
     <!-- Favicon-->
