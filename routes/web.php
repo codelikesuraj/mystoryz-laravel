@@ -18,9 +18,8 @@ use App\Http\Controllers\PostController;
 Route::group(['guest'], function (){
     Route::get('/', function () {
         return view('posts', [
-            'posts' => Post::where('visibility', '=', 'public')->latest()->get(),
+            'posts' => Post::where('visibility', '=', 'public')->latest()->Paginate(5),
             'recent_posts' => Post::where('visibility', '=', 'public')->limit(5)->latest()->get(),
-            'posts_count' => Post::where('visibility', '=', 'public')->count(),
         ]);
     })->name('home');
     Route::get('/post/{post:slug}', function (Post $post) {

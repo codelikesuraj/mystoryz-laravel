@@ -20,7 +20,7 @@ return new class extends Migration
             $table->text('excerpt');
             $table->longText('body');
             $table->string('headerImage')->nullable();
-            $table->enum('visibility', ['public', 'hidden'])->default('hidden');
+            $table->enum('visibility', ['public', 'hidden'])->default('public');
             $table->unsignedInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade')->onUpdate('cascade');
             $table->timestamps();

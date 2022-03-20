@@ -46,18 +46,12 @@
 	        </div>
 	        @endif
 
-	        <!-- Pagination-->
-		      <!-- <nav aria-label="Pagination">
-		        <ul class="pagination justify-content-center my-3">
-		            <li class="page-item disabled"><a class="page-link" href="#" tabindex="-1" aria-disabled="true">Newer</a></li>
-		            <li class="page-item active" aria-current="page"><a class="page-link" href="#!">1</a></li>
-		            <li class="page-item"><a class="page-link" href="#!">2</a></li>
-		            <li class="page-item"><a class="page-link" href="#!">3</a></li>
-		            <li class="page-item disabled"><a class="page-link" href="#!">...</a></li>
-		            <li class="page-item"><a class="page-link" href="#!">{{$posts_count}}</a></li>
-		            <li class="page-item"><a class="page-link" href="#!">Older</a></li>
-		        </ul>
-		      </nav> -->
+	        <!-- Pagination -->
+	        <nav aria-label="Pagination">
+	        	<ul class="pagination justify-content-center my-3">
+	        		{!! $posts->links() !!}
+	        	</ul>
+	        </nav>
 	      </div>
 	    @endif
 
