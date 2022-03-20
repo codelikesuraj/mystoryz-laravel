@@ -47,11 +47,9 @@
 	        @endif
 
 	        <!-- Pagination -->
-	        <nav aria-label="Pagination">
-	        	<ul class="pagination justify-content-center my-3">
+	        <div class="pagination justify-content-center my-3">
 	        		{!! $posts->links() !!}
-	        	</ul>
-	        </nav>
+	        </div>
 	      </div>
 	    @endif
 
