@@ -16,17 +16,26 @@ use App\Http\Controllers\PostController;
 |
 */
 Route::group(['guest'], function (){
+    // homepage
     Route::get('/', function () {
         return view('posts', [
-            'posts' => Post::where('visibility', '=', 'public')->latest()->Paginate(5),
+            'posts' => Post::where('visibility', '=', 'public')->orderBy('id', 'desc')->Paginate(5),
             'recent_posts' => Post::where('visibility', '=', 'public')->limit(5)->latest()->get(),
         ]);
     })->name('home');
+
+    // single post
     Route::get('/post/{post:slug}', function (Post $post) {
+        $previous_post = $post::orderBy('id', 'desc')->where('id', '<', $post->id)->limit(1)->first();
+        $next_post = $post::where('id', '>', $post->id)->limit(1)->first();
+        $recent_posts = Post::where('visibility', '=', 'public')->limit(5)->latest()->get();
+
         return view('post', [
             'post' => $post,
+            'next_post' => $next_post,
+            'previous_post' => $previous_post,
             'author' => $post->author,
-            'recent_posts' => Post::where('visibility', '=', 'public')->limit(5)->latest()->get(),
+            'recent_posts' => $recent_posts,
         ]);
     })->name('post');
 });
