@@ -1,6 +1,6 @@
 <x-public>
 	<x-slot name="title">MyStoryz | Home</x-slot>
-	<x-slot name="description"></x-slot>
+	<x-slot name="description">A platform for reading comprehension passage extracts from English Textbooks</x-slot>
 
 	<!-- Under construction header -->
 	@include('layouts.under-construction')
