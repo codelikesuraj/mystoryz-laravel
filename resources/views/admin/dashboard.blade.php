@@ -81,6 +81,7 @@
         </table>
     </div>
 
+    @if(Auth::user()->role == 'admin')
     <div class="card my-4" id="users">
         <div class="card-header">
             <span class="fs-4"><i class="fas fa-user me-1"></i> <strong>USERS</strong></span>
@@ -117,4 +118,5 @@
             </tbody>
         </table>
     </div>
+    @endif
 </x-admin>
