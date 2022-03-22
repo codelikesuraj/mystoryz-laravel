@@ -68,4 +68,14 @@ class PostController extends Controller
 
         return redirect('/dashboard')->with('status', 'Post has been deleted successfully');
     }
+
+    public function previewPost(Post $post) {
+        return view('post', [
+            'post' => $post,
+            'author' => $post->author,
+            'previous_post' => null,
+            'next_post' => null,
+            'recent_posts' => null,
+        ]);
+    }
 }

@@ -13,11 +13,20 @@
         <nav class="nav ustify-content-start">
           <div class="row">
             <div class="col-12 mb-4">
-              <a class="page-link" href="{{route('home')}}">
+              @php
+                $routeName = Route::currentRouteName();
+                $nav_message = $routeName == 'preview-post' ? 'Back to Admin' : 'Go back Home';
+              @endphp
+
+              @if($routeName == 'preview-post')
+                <a class="page-link" href="{{route('admin')}}">
+              @else
+                <a class="page-link" href="{{route('home')}}">
+              @endif
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-left" viewBox="0 0 16 16">
                   <path fill-rule="evenodd" d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z"/>
                 </svg>
-                Go Back Home
+                {{$nav_message}}
               </a>
             </div>
           </div>

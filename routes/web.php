@@ -64,6 +64,7 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/admin/edit-post/{post:slug}', [PostController::class, 'editPost'])->name('edit-post');
     Route::post('/admin/update-post', [PostController::class, 'updatePost'])->name('update-post');
     Route::post('/admin/delete-post', [PostController::class, 'deletePost'])->name('delete-post');
+    Route::get('/admin/preview/{post:slug}', [PostController::class, 'previewPost'])->name('preview-post');
 });
 
 require __DIR__.'/auth.php';
