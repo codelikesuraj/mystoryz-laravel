@@ -57,6 +57,9 @@
       
       <!-- Side widgets-->
       <div class="col-lg-4">
+          <!-- Search post -->
+          <x-search-widget />
+
           <!-- Most recent posts-->
           <x-recent-post :posts="$recent_posts"/>
       </div>

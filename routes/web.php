@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Models\Post;
 use App\Models\User;
 use App\Http\Controllers\PostController;
+use Illuminate\Http\Request;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,9 +18,17 @@ use App\Http\Controllers\PostController;
 */
 Route::group(['guest'], function (){
     // homepage
-    Route::get('/', function () {
+    Route::get('/', function (Request $request) {
+        if($request->search !== null):
+            $posts = Post::where([
+                ['visibility', '=', 'public'],
+                ['title', 'like', '%'.$request->search.'%']
+            ])->orderBy('id', 'desc')->Paginate(5)->withQueryString();
+        else:
+            $posts = Post::where('visibility', '=', 'public')->orderBy('id', 'desc')->Paginate(5);
+        endif;
         return view('posts', [
-            'posts' => Post::where('visibility', '=', 'public')->orderBy('id', 'desc')->Paginate(5),
+            'posts' => $posts,
             'recent_posts' => Post::where('visibility', '=', 'public')->limit(5)->latest()->get(),
         ]);
     })->name('home');
