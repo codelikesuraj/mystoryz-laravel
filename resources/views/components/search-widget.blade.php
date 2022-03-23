@@ -6,7 +6,7 @@
         <form method="GET" action="{{route('home')}}">
           <div class="input-group">
             <input class="form-control" type="text" placeholder="Enter search term..." aria-label="Enter search term..." aria-describedby="button-search" name="search" value="{{request()->search}}" />
-            <button class="btn btn-primary" id="button-search" type="submit">Go!</button>
+            <button class="btn btn-primary" id="button-search" type="submit">Go</button>
             <a class="btn btn-danger" href="{{route('home')}}">Clear</a>
           </div>
         </form>
