@@ -39,6 +39,9 @@ Route::group(['guest'], function (){
         $next_post = $post::where('id', '>', $post->id)->limit(1)->first();
         $recent_posts = Post::where('visibility', '=', 'public')->limit(5)->latest()->get();
 
+        // increment count
+        $post->incrementViewCount();
+
         return view('post', [
             'post' => $post,
             'next_post' => $next_post,
