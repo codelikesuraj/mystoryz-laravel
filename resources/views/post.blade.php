@@ -40,7 +40,7 @@
             <h1 class="fw-bolder mb-1">{{$post->title}}</h1>
             <!-- Post meta content-->
             <div class="small text-muted my-2">
-             Published {{$post->created_at->diffForHumans()}} by 
+             Posted {{$post->created_at->diffForHumans()}} by 
              {{ ucwords($author->firstName.' '.$author->lastName) }}
                <div class="small text-muted d-flex align-items-center mt-2">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-eye-fill" viewBox="0 0 16 16">

@@ -21,7 +21,7 @@
 	            <div class="card-body">
                 <h2 class="card-title">{{ $posts[0]->title }}</h2>
 	            	<div class="d-flex justify-content-between mb-2">
-	                <div class="small text-muted">Published {{ $posts[0]->created_at->diffForHumans() }} </div>
+	                <div class="small text-muted">Posted {{ $posts[0]->created_at->diffForHumans() }} </div>
 	                <div class="small text-muted d-flex align-items-center">
 	                	<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-eye-fill" viewBox="0 0 16 16">
 										  <path d="M10.5 8a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0z"/>
@@ -46,7 +46,7 @@
 	                <div class="card-body">
 	                  <h2 class="card-title h4">{{$post->title}}</h2>
 	                	<div class="d-flex justify-content-between mb-2">
-	                  	<div class="small text-muted">Published {{$post->created_at->diffForHumans()}}</div>
+	                  	<div class="small text-muted">Posted {{$post->created_at->diffForHumans()}}</div>
 	                  	<div class="small text-muted d-flex align-items-center">
 			                	<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-eye-fill" viewBox="0 0 16 16">
 												  <path d="M10.5 8a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0z"/>
