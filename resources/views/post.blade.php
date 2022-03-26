@@ -57,7 +57,16 @@
 
          <!-- Post content-->
          <section class="mb-4">{!! $post->body !!}</section>
-       </article>
+
+        <section class="mb-4">
+          <p>
+            <blockquote>
+              <strong>Source: </strong>
+              Senior English Project for Secondary Schools - Students' Book 2
+            </blockquote>
+          </p>
+        </section>
+      </article>
 
        <!-- Next and Previous post -->
        <nav class="pagination justify-content-between mb-4">
