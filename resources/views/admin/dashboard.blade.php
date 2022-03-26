@@ -16,6 +16,7 @@
         <tr>
           <th>S/N</th>
           <th>Title</th>
+          <th>Views</th>
           <th>Status</th>
           <th>Author</th>
           <th>Published</th>
@@ -27,6 +28,7 @@
         <tr>
           <th>S/N</th>
           <th>Title</th>
+          <th>Views</th>
           <th>Status</th>
           <th>Author</th>
           <th>Published</th>
@@ -39,6 +41,7 @@
         <tr>
           <td>{{$loop->iteration}}</td>
           <td>{{$post->title}}</td>
+          <td class="text-center">{{$post->views}}</td>
           <td>{{ucfirst($post->visibility)}}</td>
           <td>{{ucwords($post->author->firstName.' '.$post->author->lastName)}}</td>
           <td>{{$post->created_at}}</td>
