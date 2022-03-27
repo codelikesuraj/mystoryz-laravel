@@ -10,7 +10,7 @@
     <title>{{ config('app.name', 'Laravel') }} | {{ $title }}</title>
 
     <link href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css" rel="stylesheet" /><!--  -->
-    <link href="/css/template/styles.css" rel="stylesheet" />
+    <link rel="stylesheet" href="{{ asset('css/app.css') }}">
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.min.js" crossorigin="anonymous"></script>
