@@ -22,7 +22,8 @@
     <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
 
     <!-- Core theme CSS (includes Bootstrap)-->
-    <link href="/css/template/styles.css" rel="stylesheet" />
+    <!-- <link href="/css/template/styles.css" rel="stylesheet" /> -->
+    <link rel="stylesheet" href="{{ asset('css/app.css') }}">
 </head>
 <body>
     <!-- Responsive navbar-->
