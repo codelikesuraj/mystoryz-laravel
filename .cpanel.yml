@@ -2,4 +2,4 @@
 deployment:
   tasks:
     - export DEPLOYPATH=/home/weevacom/public_html/mystoryz-laravel
-    - /bin/cp -R app $DEPLOYPATH
+    - /bin/cp -R * $DEPLOYPATH
