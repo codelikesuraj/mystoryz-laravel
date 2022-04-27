@@ -43,8 +43,12 @@
     {{ $slot }}
     
     <!-- Footer-->
-    <footer class="py-5 bg-dark">
-        <div class="container"><p class="m-0 text-center text-white">Copyright &copy; {{config('app.name')}} <?=date('Y')?></p></div>
+    <footer class="py-5 bg-black">
+        <div class="container">
+            <p class="m-1 text-center text-white">Copyright &copy; {{config('app.name')}} <?=date('Y')?></p>
+            <p class="m-1 text-center text-white">Built with HTML, CSS, and <a class="text-danger" target="_blank" href="https://laravel.com/">Laravel PHP</a></p>
+            <p class="m-1 text-center text-white">Made with ❤ by Codelikesuraj</p>
+        </div>
     </footer>
     
     <!-- Bootstrap core JS-->
